@@ -1,5 +1,7 @@
 # Games Programmer
 
+#### Technical Skills: C++, HLSL, Python
+
 ### Education
 Physics, BSc
 
