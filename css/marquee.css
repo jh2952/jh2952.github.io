@@ -1,0 +1,35 @@
+.marquee-wrapper {
+    padding-block: 0.5rem;
+    border-block: 2px dashed black;
+    margin: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    user-select: none;
+
+    --gap: 2rem;
+
+    gap: var(--gap);
+}
+
+.marquee-wrapper ul {
+    list-style: none;
+    flex-shrink: 0;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap);
+
+
+    animation: scroll 30s linear infinite;
+}
+
+.marquee-wrapper:hover ul {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}

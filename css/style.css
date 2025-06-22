@@ -1,47 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "JetBrains Mono", monospace;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: space-between;
-  text-align: center;
-  background-color: #000;
-  color: #fff;
-}
-
-header h1 {
-  margin: 1rem;
-  font-size: 2em;
-}
-
-header nav {
-  margin: 1rem;
-  font-size: 2em;
-}
-
-header a, header a:visited {
-  color: #fff;
-  text-decoration: none;
-}
-
-header a:hover, header a:focus {
-  color: hsl(0, 0%, 60%, 0.6);
-}
-
-@media screen and (min-width: 576px)
-{
-  header {
-    flex-direction: row;
-  }
-}
+@import url('base.css');
+@import url('projects.css');
+@import url('responsive.css');
+@import url('marquee.css');
