@@ -19,6 +19,9 @@
 .portfolio-container iframe {
     margin: 0 auto;
     margin-bottom: 2rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
 }
 
 .portfolio-container h3 {

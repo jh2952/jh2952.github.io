@@ -1,6 +1,13 @@
 @media screen and (min-width: 576px)
 {
-  header {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px)
+{
+    header {
     flex-direction: row;
     align-items: center;
     text-align: left;
@@ -9,15 +16,8 @@
   header h1 {
     text-align: left;
   }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 768px)
-{
-  .projects-grid {
+  
+    .projects-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
