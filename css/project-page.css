@@ -3,12 +3,23 @@
 .portfolio-container {
     margin: 2rem auto;
     display: flex;
-    max-width: min(1200px, 80%);
+    max-width: min(80%, 1200px);
     flex-direction: column;
     border: 5px double black;
     border-radius: 15px;
     padding: 2rem;
 }
+
+.video-container {
+    margin: 2rem auto;
+    display: flex;
+    max-width: min(80%, 1200px);
+    flex-direction: column;
+    border: 5px double black;
+    border-radius: 15px;
+    padding: 2rem;
+}
+
 
 .portfolio-container h2 {
     font-size: 2.5rem;
@@ -16,10 +27,24 @@
     text-align: center;
 }
 
+.video-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.video-container iframe {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    width: min(1200px, 100%);
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
 .portfolio-container iframe {
     margin: 0 auto;
     margin-bottom: 2rem;
-    width: 100%;
+    width: min(600px, 100%);
     height: auto;
     aspect-ratio: 1 / 1;
 }
@@ -31,3 +56,12 @@
 .portfolio-container ul li {
     list-style: inside;
 }
+
+.video-container h3 {
+    padding-block: 0.5rem;
+}
+
+.video-container ul li {
+    list-style: inside;
+}
+
