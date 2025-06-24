@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jack Howells | Snake Party</title>
-    <link rel="stylesheet" href="../css/project-page.css" />
-  </head>
 
-  <body>
-    <header>
-      <h1>
-        <a href="../index.html"><span class="nowrap">Jack Howells</span></a>
-      </h1>
-      <div class="social-icons">
-        <a href="https://github.com/jh2952/"
-          ><img src="../assets/icons/github.svg" alt="GitHub"
-        /></a>
-        <a href="https://www.linkedin.com/in/jack-howells-19584826b/"
-          ><img src="../assets/icons/linkedin.svg" alt="LinkedIn"
-        /></a>
-        <a href="mailto:jackfan9000@gmail.com"
-          ><img src="../assets/icons/mail.svg" alt="Email"
-        /></a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../cv.html">CV</a></li>
-          <li><a href="../blog.html">Blog</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="video-container">
-        <h2>Snake Party</h2>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/EqPuux4oIP8"
-          title="Snake Party | Trailer"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-        <h3>Description</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-          temporibus quibusdam aliquam provident ex ullam saepe magnam minima
-          aspernatur, fugiat, obcaecati, labore voluptate placeat ipsum facere
-          iste quo voluptatem a!
-        </p>
-        <h3>Reception</h3>
-        <ul>
-          <li>Yooo they love it</li>
-        </ul>
-      </section>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jack Howells | Snake Party</title>
+  <link rel="stylesheet" href="../css/snake.css" />
+</head>
+
+<body>
+  <header>
+    <h1>
+      <a href="../index.html"><span class="nowrap">Jack Howells</span></a>
+    </h1>
+    <div class="social-icons">
+      <a href="https://github.com/jh2952/"><img src="../assets/icons/github.svg" alt="GitHub" /></a>
+      <a href="https://www.linkedin.com/in/jack-howells-19584826b/"><img src="../assets/icons/linkedin.svg"
+          alt="LinkedIn" /></a>
+      <a href="mailto:jackfan9000@gmail.com"><img src="../assets/icons/mail.svg" alt="Email" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="video-container">
+      <h2>Snake Party</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/EqPuux4oIP8" title="Snake Party | Trailer"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <h3>Brief</h3>
+      <ul>
+        <li>Created a deferred rendering extension to <a
+            href="https://github.com/sumo-digital-academy/Play3Dshooter">Play3D</a>.</li>
+      </ul>
+      <h3>Deferred Rendering</h3>
+      <p>
+        Deferred rendering is graphics technique where the geometry data (e.g., albedo, normals, depth) are rendered
+        first into multiple textures - together called the <b>GBuffer</b>. Then, in a second pass, lighting calculations
+        are done in screen-space using the data stored in those buffers.
+        <br><br>
+        As opposed to other approaches like forward rendering, it is much cheaper in a deferred renderer to support
+        potentially hundreds of dynamic lights with little performance cost. Therefore we chose a deferred renderer to
+        support our vision for the game, which was bright and colourful and lit up like... a party!
+      </p>
+      <img src="../assets/images/GBuffer_1963x1340.png" alt="Diagram of the GBuffer">
+    </section>
+  </main>
+</body>
+
 </html>

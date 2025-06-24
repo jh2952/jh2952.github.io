@@ -1,0 +1,16 @@
+@import url('base.css');
+@import url('project-page.css');
+
+.video-container img {
+    max-width: min(1000px, 80%);
+    margin: 0 auto;
+    margin-block: 2rem;
+}
+
+.video-container ul li {
+    list-style: inside;
+}
+
+.video-container h3 {
+    margin-top: 0.3rem;
+}
