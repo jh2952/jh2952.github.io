@@ -14,3 +14,21 @@
 .video-container h3 {
     margin-top: 0.3rem;
 }
+
+.gif-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+  gap: 16px; /* space between images */
+}
+
+
+
+.gif-container img {
+  width: 100%; /* makes image fill the column */
+  height: auto;
+  display: block;
+}
+
+.snake-gif {
+    width: min(500px, 50%);
+}

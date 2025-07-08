@@ -1,85 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jack Howells | Snake Party</title>
-    <link rel="stylesheet" href="../css/snake.css" />
-  </head>
 
-  <body>
-    <header>
-      <h1>
-        <a href="../index.html"><span class="nowrap">Jack Howells</span></a>
-      </h1>
-      <div class="social-icons">
-        <a href="https://github.com/jh2952/"
-          ><img src="../assets/icons/github.svg" alt="GitHub"
-        /></a>
-        <a href="https://www.linkedin.com/in/jack-howells-19584826b/"
-          ><img src="../assets/icons/linkedin.svg" alt="LinkedIn"
-        /></a>
-        <a href="mailto:jackfan9000@gmail.com"
-          ><img src="../assets/icons/mail.svg" alt="Email"
-        /></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jack Howells | Snake Party</title>
+  <link rel="stylesheet" href="../css/snake.css" />
+</head>
+
+<body>
+  <header>
+    <h1>
+      <a href="../index.html"><span class="nowrap">Jack Howells</span></a>
+    </h1>
+    <div class="social-icons">
+      <a href="https://github.com/jh2952/"><img src="../assets/icons/github.svg" alt="GitHub" /></a>
+      <a href="https://www.linkedin.com/in/jack-howells-19584826b/"><img src="../assets/icons/linkedin.svg"
+          alt="LinkedIn" /></a>
+      <a href="mailto:jackfan9000@gmail.com"><img src="../assets/icons/mail.svg" alt="Email" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="video-container">
+      <h2>Snake Party</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/EqPuux4oIP8" title="Snake Party | Trailer"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <h3>Synopsis</h3>
+      <ul>
+        <li>Created a deferred rendering extension to
+          <a href="https://github.com/sumo-digital-academy/Play3Dshooter">Play3D</a> in C++.
+        </li>
+        <li>Set up point lights, spot lights, and decals in the deferred renderer.</li>
+        <li>Used <a href="https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm">De Castaljau's Algorithm</a> to
+          procedurally generate a mesh for the snake player character.</li>
+        <li>Wrote several shaders - including a bloom post effect - in HLSL.</li>
+        <li>Worked with a team of 11 programmers and 5 technical artists.</li>
+        <li>Used perforce to solve merge conflicts and perform swarm code reviews.</li>
+        <li>Used RenderDoc and PIX to debug and profile different object and PostFX shaders.</li>
+        <li>Used ADO within an Agile SCRUM framework; acting as scrum leader for a sprint.</li>
+      </ul>
+      <h3>Deferred Rendering</h3>
+      <p>
+        Deferred rendering is graphics technique where the geometry data
+        (e.g., albedo, normals, depth) are rendered first into multiple
+        textures - together called the <b>GBuffer</b>. Then, in a second pass,
+        lighting calculations are done in screen-space using the data stored
+        in those buffers. <br /><br />
+        As opposed to other approaches like forward rendering, it is much
+        cheaper in a deferred renderer to support potentially hundreds of
+        dynamic lights with little performance cost. Therefore we chose a
+        deferred renderer to support our vision for the game, which was bright
+        and colourful and lit up like... a party! <br><br>
+        Deferred Rendering also opens up many opportunities for effects and post effects. For example, in this deferred
+        renderer, I set up a decal renderer. <br><br>
+        Below you can see my RenderDoc captures of the entire GBuffer.
+      </p>
+
+      <img src="../assets/images/GBuffer_1963x1340.png" alt="Diagram of the GBuffer" />
+
+      <p>
+        Below you can see my RenderDoc captures of the point lighting pass and decal render pass.
+      </p>
+
+      <div class="gif-container">
+        <img src="../assets/images/PointLightingScene.gif" alt="Lighting Pass">
+        <img src="../assets/images/DecalAlbedo.gif" alt="Deferred Decal Gif">
       </div>
-      <nav>
-        <ul>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../cv.html">CV</a></li>
-          <li><a href="../blog.html">Blog</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="video-container">
-        <h2>Snake Party</h2>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/EqPuux4oIP8"
-          title="Snake Party | Trailer"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-        <h3>Synopsis</h3>
-        <ul>
-          <li>Created a deferred rendering extension to
-            <a href="https://github.com/sumo-digital-academy/Play3Dshooter"
-              >Play3D</a
-            > in C++.
-          </li>
-          <li>Set up point lights, spot lights, and decals in the deferred renderer.</li>
-          <li>Used <a href="https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm">De Castaljau's Algorithm</a> to procedurally generate a mesh for the snake player character.</li>
-          <li>Wrote several shaders - including a bloom post effect - in HLSL.</li>
-          <li>Worked with a team of 11 programmers and 5 technical artists.</li>
-          <li>Used perforce to solve merge conflicts and perform swarm code reviews.</li>
-          <li>Used RenderDoc and PIX to debug and profile different object and PostFX shaders.</li>
-          <li>Used ADO within an Agile SCRUM framework; acting as scrum leader for a sprint.</li>
-        </ul>
-        <h3>Deferred Rendering</h3>
-        <p>
-          Deferred rendering is graphics technique where the geometry data
-          (e.g., albedo, normals, depth) are rendered first into multiple
-          textures - together called the <b>GBuffer</b>. Then, in a second pass,
-          lighting calculations are done in screen-space using the data stored
-          in those buffers. <br /><br />
-          As opposed to other approaches like forward rendering, it is much
-          cheaper in a deferred renderer to support potentially hundreds of
-          dynamic lights with little performance cost. Therefore we chose a
-          deferred renderer to support our vision for the game, which was bright
-          and colourful and lit up like... a party!
-        </p>
-        <img
-          src="../assets/images/GBuffer_1963x1340.png"
-          alt="Diagram of the GBuffer"
-        />
-        <div class="lighting-gifs">
-          
-        </div>
-      </section>
-    </main>
-  </body>
+
+      <h3>Procedural Mesh Generation</h3>
+      <p>
+        As part of Snake Party, we needed a mesh for the player character which would follow the physics skeleton set
+        up by a colleague of mine. This mesh would need to be procedrually generated, lit and textured. <br><br>
+        To achieve this, I used De Castaljau's Algorithm for generating bezier curves.
+      </p>
+      <img src="../assets/images/BezierCurveWithMesh.jpg"
+        alt="Wireframe mesh of the Snake, with control points of the bezier curve highlighted.">
+      <p>
+        This consisted of taking the joints from the physics system, and using them to generate a full set of control
+        points for a cubic bezier curve. Then I generate interpolation points between each set of four control points.
+        For each of the interpolated points, I also interpolate an up vector. <br><br>
+        Then I generate a circle of vertices around each interpolation point using the up vector and generating a right
+        vector. After generating my vertices, I stitch them together by indexing them. I also generate normals that
+        radially point outward from the centre of the circle of verts, and UV's so that the mesh can be textured.
+      </p>
+      <img src="../assets/images/Wiggle.gif" alt="Snake navigating through the level." class="snake-gif">
+      <h3>Bloom</h3>
+      <p>
+        Bloom consists of extracting the pixels in your render which are bright, blurring those pixels, and blending
+        them back into your render. It emphasises bright parts of the image by making them <i>bleed</i> slightly,
+        mimicing the ways cameras and our eyes see bright lights; lending to a specific style that we were striving for.
+      </p>
+      <img src="../assets/images/Bloom.png" alt="Diagram showing the process for blooming an image.">
+      <p>
+        As you can see from the diagram above, the bloom approach I used did vertical bloom and horizontal bloom in
+        seperate passes, specifically using two different 1D kernels. I decided to take this approach after profiling
+        the bloom using PIX, since using two 1D kernels instead of a singular 2D kernel meant that the bloom scaled with
+        the resolution at an algorithmic complexity of O(n) instead of O(n^2). Doing this resulted in a performance
+        improvement of 78.5% on the GPU.
+      </p>
+    </section>
+  </main>
+</body>
+
 </html>
