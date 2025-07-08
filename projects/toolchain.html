@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jack Howells | Frogi</title>
+    <title>Jack Howells | Toolchain Extension</title>
     <link rel="stylesheet" href="../css/project-page.css" />
   </head>
 
@@ -36,6 +36,30 @@
         <h2>Toolchain Extension</h2>
         <h3>Synopsis</h3>
         <ul>
+          <li>
+            Extended an in-house engine; developing a toolchain to automatically
+            import assets (textures, meshes, audio, materials, etc)
+          </li>
+          <li>
+            Built a tool to recursively scan an asset directory for .descriptor
+            files - files which specified import settings (asset type,
+            compression settings, shader/texture linking, etc) - and use them to
+            process source asset files into binary chunkfiles.
+          </li>
+          <li>
+            Created an integrated runtime asset loader to resolve chunkfiles
+            into usable game assets at runtime.
+          </li>
+          <li>
+            Stored and managed asset references in the editor using a URI-based manifest system.
+          </li>
+          <li>
+            Used C++ for tool creation and integration with the engine.
+          </li>
+          <li>
+            Collaborated closely with artists to test and gain feedback on the
+            toolchain; creating documentation to assist them in using it.
+          </li>
         </ul>
         <h3>Description</h3>
       </section>
