@@ -65,15 +65,15 @@
         Below you can see my RenderDoc captures of the entire GBuffer.
       </p>
 
-      <img src="../assets/images/GBuffer_1963x1340.png" alt="Diagram of the GBuffer" />
+      <img src="../assets/images/SnakeParty/GBuffer_1963x1340.png" alt="Diagram of the GBuffer" />
 
       <p>
         Below you can see my RenderDoc captures of the point lighting pass and decal render pass.
       </p>
 
       <div class="gif-container">
-        <img src="../assets/images/PointLightingScene.gif" alt="Lighting Pass">
-        <img src="../assets/images/DecalAlbedo.gif" alt="Deferred Decal Gif">
+        <img src="../assets/images/SnakeParty/PointLightingScene.gif" alt="Lighting Pass">
+        <img src="../assets/images/SnakeParty/DecalAlbedo.gif" alt="Deferred Decal Gif">
       </div>
 
       <h3>Procedural Mesh Generation</h3>
@@ -82,7 +82,7 @@
         up by a colleague of mine. This mesh would need to be procedrually generated, lit and textured. <br><br>
         To achieve this, I used De Castaljau's Algorithm for generating bezier curves.
       </p>
-      <img src="../assets/images/BezierCurveWithMesh.jpg"
+      <img src="../assets/images/SnakeParty/BezierCurveWithMesh.jpg"
         alt="Wireframe mesh of the Snake, with control points of the bezier curve highlighted.">
       <p>
         This consisted of taking the joints from the physics system, and using them to generate a full set of control
@@ -92,14 +92,14 @@
         vector. After generating my vertices, I stitch them together by indexing them. I also generate normals that
         radially point outward from the centre of the circle of verts, and UV's so that the mesh can be textured.
       </p>
-      <img src="../assets/images/Wiggle.gif" alt="Snake navigating through the level." class="snake-gif">
+      <img src="../assets/images/SnakeParty/Wiggle.gif" alt="Snake navigating through the level." class="snake-gif">
       <h3>Bloom</h3>
       <p>
         Bloom consists of extracting the pixels in your render which are bright, blurring those pixels, and blending
         them back into your render. It emphasises bright parts of the image by making them <i>bleed</i> slightly,
         mimicing the ways cameras and our eyes see bright lights; lending to a specific style that we were striving for.
       </p>
-      <img src="../assets/images/Bloom.png" alt="Diagram showing the process for blooming an image.">
+      <img src="../assets/images/SnakeParty/Bloom.png" alt="Diagram showing the process for blooming an image.">
       <p>
         As you can see from the diagram above, the bloom approach I used did vertical bloom and horizontal bloom in
         seperate passes, specifically using two different 1D kernels. I decided to take this approach after profiling
