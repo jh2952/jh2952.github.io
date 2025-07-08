@@ -1,6 +1,10 @@
 @import url(home.css);
 @import url(skills.css);
 
+h4 {
+    padding-bottom: 1rem;
+}
+
 .square-game-container {
     margin: 2rem auto;
     display: flex;
