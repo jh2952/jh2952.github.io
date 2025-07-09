@@ -1,0 +1,8 @@
+@import url('base.css');
+@import url('project-page.css');
+
+.spider-blueprint-prototype {
+    width: min(500px, 70%);
+    padding-block: 1rem;
+    margin: 0rem auto;
+}
