@@ -33,10 +33,10 @@
       <h3>Synopsis</h3>
       <ul>
         <li>
-          Devloped an automated asset build tool that processed source assets into runtime-ready chunkfiles.
+          Helped develop an automated asset build tool that processed source assets into runtime-ready chunkfiles.
         </li>
         <li>
-          Designed the system around <code>.assetdesc</code> files, which would describe the asset type, relative source
+          Designed new <code>.assetdesc</code> file types; files which would describe the asset type, relative source
           path of the asset, asset import settings, and references to asset dependencies.
         </li>
         <li>
@@ -44,15 +44,17 @@
           generating <code>.assetbin</code> chunkfiles in a mirrored asset binaries directory.
         </li>
         <li>
-          Built a flexible, scalable pipeline where new asset types or settings could easily be added by updating or
-          extending the asset descriptor build logic on the tool side.
+          Extended the toolchain in a flexible and scalable way where extensions to import settings could be easily
+          implemented by updating the asset descriptor build logic on the tool side.
         </li>
         <li>
           Improved team workflow by making assets accessible immediately once submitted through perforce via an asset
           manager which loaded specific asset manifests and made automatically them accessible via their directory URI.
         </li>
       </ul>
-      <h3>Description</h3>
+      <h3>Pipeline Diagram</h3>
+      <img src="../assets/images/Toolchain/toolchain.png" alt="Toolchain Diagram">
+      <img src="../assets/images/Toolchain/runtime.png" alt="Toolchain Diagram">
     </section>
   </main>
 </body>
