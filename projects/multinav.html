@@ -1,70 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jack Howells | Multi-surface Navigation</title>
-    <link rel="stylesheet" href="../css/project-page.css" />
-  </head>
 
-  <body>
-    <header>
-      <h1>
-        <a href="../index.html"><span class="nowrap">Jack Howells</span></a>
-      </h1>
-      <div class="social-icons">
-        <a href="https://github.com/jh2952/"
-          ><img src="../assets/icons/github.svg" alt="GitHub"
-        /></a>
-        <a href="https://www.linkedin.com/in/jack-howells-19584826b/"
-          ><img src="../assets/icons/linkedin.svg" alt="LinkedIn"
-        /></a>
-        <a href="mailto:jackfan9000@gmail.com"
-          ><img src="../assets/icons/mail.svg" alt="Email"
-        /></a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../cv.html">CV</a></li>
-          <li><a href="../blog.html">Blog</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="square-game-container">
-        <h2>Multi-surface Climbing Physics</h2>
-        <h3>Synopsis</h3>
-        <ul>
-          <li>
-            Created an entity within a first-party ECS framework that uses the
-            Havok API to perform radial line traces to navigate along surfaces
-            at any angle.
-          </li>
-          <li>
-            Used Unreal Insights to profile the entity system across different
-            threads.
-          </li>
-          <li>
-            Created Automated Tests to judge if the entities can navigate
-            through an obstacle course.
-          </li>
-          <li>
-            Used Havok's visual debugger to check if line traces were occuring
-            in the correct places.
-          </li>
-          <li>
-            Provided an interface to the editor to modify the settings of the
-            line traces so that they can balance performance requirements with
-            physical accuracy and gameplay.
-          </li>
-          <li>
-            Created documentation for my colleagues to understand the system.
-          </li>
-        </ul>
-        <h3>Description</h3>
-        <p></p>
-      </section>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jack Howells | Multi-surface Navigation</title>
+  <link rel="stylesheet" href="../css/multinav.css" />
+</head>
+
+<body>
+  <header>
+    <h1>
+      <a href="../index.html"><span class="nowrap">Jack Howells</span></a>
+    </h1>
+    <div class="social-icons">
+      <a href="https://github.com/jh2952/"><img src="../assets/icons/github.svg" alt="GitHub" /></a>
+      <a href="https://www.linkedin.com/in/jack-howells-19584826b/"><img src="../assets/icons/linkedin.svg"
+          alt="LinkedIn" /></a>
+      <a href="mailto:jhowells2k@gmail.com"><img src="../assets/icons/mail.svg" alt="Email" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="square-game-container">
+      <h2>Multi-surface Climbing Physics</h2>
+      <h3>Synopsis</h3>
+      <ul>
+        <li>Created an entity within a first-party ECS framework that uses the Havok API to perform radial line traces
+          to navigate along surfaces at any angle.</li>
+        <li>Used Unreal Insights to profile the entity system across different threads.</li>
+        <li>Created Automated Tests to judge if the entities can navigate through an obstacle course.</li>
+        <li>Used Havok's visual debugger to check if line traces were occuring in the correct places.</li>
+        <li>Provided an interface to the editor to modify the settings of the line traces so that they can balance
+          performance requirements with physical accuracy and gameplay.</li>
+        <li>Used Perforce to navigate streams, resolve merge conflicts, participate in Swarm code reviews and commit my
+          work.</li>
+        <li>Used Jira while working within an agile SCRUM framework - attending daily standups and updating stakeholders
+          on the progress of my task.</li>
+        <li>Created documentation for my colleagues to understand the system.</li>
+      </ul>
+      <h3>Rapid Prototyping</h3>
+      <p>
+        This task consisted of trying to figure out a physics-based solution to have entities climb up walls and across
+        ceilings. To tackle this problem, I created prototypes in blueprint to get the basic idea down. Afterwards, I
+        ported the blueprint to C++ to prepare my prototype for integration with the ECS.
+      </p>
+      <img src="../assets/images/Multisurface/SpiderRadialLineTraceClimb.gif" alt="" class="spider-blueprint-prototype">
+      <p>
+        During this prototype phase is when I decided that radial line traces - or more accurately, several linear line
+        traces in a radial path - would be the best way of judging the environment ahead; using the inverse of the
+        impact normal of the line trace as a custom gravity direction for the entitiy.
+      </p>
+      <h3>ECS Integration</h3>
+      <img src="../assets/images/Multisurface/ECSClimbers.gif" alt="" class="spider-blueprint-prototype">
+      <p>
+        This project used Red Kite's in house Archetypal ECS plugin.
+        Integrating my prototype into the ECS meant creating a new archetype, creating an entity with new custom
+        components (which consists of simply data, such as <code>FCustomGravity</code> or
+        <code>FClimbingBehaviourTag</code> ), and a system to process that data, which I encapsulated under the
+        <code>ECSClimbingSystem</code> namespace.
+        <br><br>
+        Using an ECS instead of actors meant that the data associated with an entity was far more cache optimised and
+        therefore more performant. Additionally, the overhead associated with an actor was no longer present.
+        <br><br>
+        Additionally - over relying on the Unreal-Havok integration layer, I directly used the Havok API to query the
+        havok world and perform ray casts. Whilst Havok in Unreal is not deterministic, I worked within a Havok world
+        which ran seperately from the Unreal layer, so querying that world directly also guaranteed that the spiders
+        would behave deterministically.
+      </p>
+      <h3>Debugging and Testing with Havok</h3>
+      <img src="../assets/images/Multisurface/HavokVisualDebugger.gif" alt="" class="spider-blueprint-prototype">
+      <p>
+        To debug this feature, I took advantage of the Havok Visual Debugger. Specifically, I would use the ray cast
+        query view to check if my radial line traces were occuring where I expected them to, and how I expected them
+        too.
+        <br><br>
+        Whereas Unreal visual debugging was good to judge if my physics was performing as expected, the Havok visual
+        debugger connects <i>directly</i> to the havok world. This makes it easy to check e.g., if entities are being
+        created with physics bodies, if ray casts are firing off correctly, etc.
+        <br><br>
+        Beyond that, I also took advantage of <code>AFunctionalTest</code> to check the robustness of my code; creating
+        obstacle courses for my entities to navigate and reporting back on the success rate of those entities in
+        navigating the course.
+      </p>
+    </section>
+  </main>
+</body>
+
 </html>

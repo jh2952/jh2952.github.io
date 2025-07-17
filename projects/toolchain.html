@@ -1,68 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jack Howells | Toolchain Extension</title>
-    <link rel="stylesheet" href="../css/project-page.css" />
-  </head>
 
-  <body>
-    <header>
-      <h1>
-        <a href="../index.html"><span class="nowrap">Jack Howells</span></a>
-      </h1>
-      <div class="social-icons">
-        <a href="https://github.com/jh2952/"
-          ><img src="../assets/icons/github.svg" alt="GitHub"
-        /></a>
-        <a href="https://www.linkedin.com/in/jack-howells-19584826b/"
-          ><img src="../assets/icons/linkedin.svg" alt="LinkedIn"
-        /></a>
-        <a href="mailto:jackfan9000@gmail.com"
-          ><img src="../assets/icons/mail.svg" alt="Email"
-        /></a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../cv.html">CV</a></li>
-          <li><a href="../blog.html">Blog</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="square-game-container">
-        <h2>Toolchain Extension</h2>
-        <h3>Synopsis</h3>
-        <ul>
-          <li>
-            Extended an in-house engine; developing a toolchain to automatically
-            import assets (textures, meshes, audio, materials, etc)
-          </li>
-          <li>
-            Built a tool to recursively scan an asset directory for .descriptor
-            files - files which specified import settings (asset type,
-            compression settings, shader/texture linking, etc) - and use them to
-            process source asset files into binary chunkfiles.
-          </li>
-          <li>
-            Created an integrated runtime asset loader to resolve chunkfiles
-            into usable game assets at runtime.
-          </li>
-          <li>
-            Stored and managed asset references in the editor using a URI-based manifest system.
-          </li>
-          <li>
-            Used C++ for tool creation and integration with the engine.T
-          </li>
-          <li>
-            Collaborated closely with artists to test and gain feedback on the
-            toolchain; creating documentation to assist them in using it.
-          </li>
-        </ul>
-        <h3>Description</h3>
-      </section>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jack Howells | Toolchain</title>
+  <link rel="stylesheet" href="../css/project-page.css" />
+</head>
+
+<body>
+  <header>
+    <h1>
+      <a href="../index.html"><span class="nowrap">Jack Howells</span></a>
+    </h1>
+    <div class="social-icons">
+      <a href="https://github.com/jh2952/"><img src="../assets/icons/github.svg" alt="GitHub" /></a>
+      <a href="https://www.linkedin.com/in/jack-howells-19584826b/"><img src="../assets/icons/linkedin.svg"
+          alt="LinkedIn" /></a>
+      <a href="mailto:jhowells2k@gmail.com"><img src="../assets/icons/mail.svg" alt="Email" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="square-game-container">
+      <h2>Toolchain Extension</h2>
+      <h3>Synopsis</h3>
+      <ul>
+        <li>
+          Helped develop an automated asset build tool that processed source assets into runtime-ready chunkfiles.
+        </li>
+        <li>
+          Designed new <code>.assetdesc</code> file types; files which would describe the asset type, relative source
+          path of the asset, asset import settings, and references to asset dependencies.
+        </li>
+        <li>
+          Used <code>std::filesystem</code> to recursively scan a source assets directory for asset descriptor files,
+          generating <code>.assetbin</code> chunkfiles in a mirrored asset binaries directory.
+        </li>
+        <li>
+          Extended the toolchain in a flexible and scalable way where extensions to import settings could be easily
+          implemented by updating the asset descriptor build logic on the tool side.
+        </li>
+        <li>
+          Improved team workflow by making assets accessible immediately once submitted through perforce via an asset
+          manager which loaded specific asset manifests and made automatically them accessible via their directory URI.
+        </li>
+      </ul>
+      <h3>Pipeline Diagram</h3>
+      <img src="../assets/images/Toolchain/toolchain.png" alt="Toolchain Diagram">
+      <img src="../assets/images/Toolchain/runtime.png" alt="Toolchain Diagram">
+    </section>
+  </main>
+</body>
+
 </html>
