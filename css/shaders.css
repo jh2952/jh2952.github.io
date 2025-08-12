@@ -27,6 +27,8 @@
   display: block;
 }
 
-.snake-gif {
-    width: min(500px, 50%);
+.gif {
+    width: min(500px, 40%);
+    display: block;
+    margin: 0 auto;
 }
