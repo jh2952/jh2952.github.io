@@ -1,0 +1,32 @@
+@import url('base.css');
+@import url('project-page.css');
+
+.video-container img {
+    max-width: min(1000px, 80%);
+    margin: 0 auto;
+    margin-block: 2rem;
+}
+
+.video-container ul li {
+    list-style: inside;
+}
+
+.video-container h3 {
+    margin-top: 0.3rem;
+}
+
+.gif-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+  gap: 16px; /* space between images */
+}
+
+.gif-container img {
+  width: 100%; /* makes image fill the column */
+  height: auto;
+  display: block;
+}
+
+.snake-gif {
+    width: min(500px, 50%);
+}
